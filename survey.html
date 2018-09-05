@@ -1,0 +1,34 @@
+Routines
+</br>
+<script type="text/javascript">
+var i = 0;
+function add_a_routine(){
+    var container = document.getElementById("container");
+
+   
+    var cond_title = document.createTextNode("Condition:");
+  container.appendChild(cond_title);
+    var trigger_title = document.createTextNode("Trigger:");
+    container.appendChild(trigger_title);
+    
+    container.appendChild(document.createElement("br"));
+    var cond_input = document.createElement("input");
+    cond_input.type = "text";
+ cond_input.id = "cond_input" + i;
+    container.appendChild(cond_input);
+    
+    
+    var trigger_input = document.createElement("input");
+    trigger_input.type = "text";
+ trigger_input.id = "trigger_input" + i;
+    container.appendChild(trigger_input);
+   
+    i+=1;
+    container.appendChild(document.createElement("br"));
+    container.appendChild(document.createElement("br"));
+    
+}
+</script>
+<div id="container">
+<button type="button" id="create_a_routine" onclick=add_a_routine()>Add a routine</button>
+<div>
