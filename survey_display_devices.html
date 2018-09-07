@@ -128,15 +128,32 @@ Qualtrics.SurveyEngine.addOnload(function()
 		}
 	}
 
+  var dict = {};
+	console.log("Number of devices", all_iot.length);
+    for(var index = 0; index < all_iot.length; index++) {
+			for (var m = 0; m <obj1.length; m++){
+        var fromTxt = JSON.stringify(Object.keys(obj1[m])[0]).trim().replace(/\"/g, '').replace(/' '/g, '');
+        var selected_device = all_iot[index].replace(/\s/g, '');
+        if(selected_device == fromTxt) {
+          console.log("What is the devices ", all_iot[index]);
+          var output =JSON.stringify(Object.values(obj1[m])[0]).trim().replace(/\"/g, '');
+          dict[all_iot[index]] = output.replace(/-/g, ',');
+			break;
+        }
+      }
+  }
+  console.log("dictionary:");
+  console.log(dict);
 	var table = document.getElementById("table_container");   
   var td_array=[];
   var tr_array=[];
+
 	for(var index = 0; index < all_iot.length; index++) {
 
-    var td = QBuilder('td',{class:'LabelContainer LabelContatiner', style:"padding-right:5px; padding-bottom:5px;"});
-    var span = QBuilder('span',{class:'LabelWrapper', id:'t'+(index+1)});
+    var td = QBuilder('td',{class:'LabelContainer LabelContatiner', style:"padding-right:5px; padding-bottom:5px;", id:all_iot[index]});
+    var span = QBuilder('span',{class:'LabelWrapper'});
     var label = QBuilder('label',{class:'SingleAnswer', style:"width:120px; height:100px;"});
-    var device_name = QBuilder('span',all_iot[index]);
+    var device_name = QBuilder('span',{ id:'t'+(index+1)},all_iot[index]);
 
     label.appendChild(device_name);
     span.appendChild(label);
@@ -156,27 +173,26 @@ Qualtrics.SurveyEngine.addOnload(function()
     table.appendChild(tbody);
 
 
-	
-		$(document).on("click", "span", function(e) {
+	// Create onClickListener for devices
+		$(document).on("click", "td", function(e) {
 			var targetId = e.target.id;
 			//replace leading non-digit t
 			var i = parseInt(targetId.replace( /^\D+/g, ''));
 			//alert(all_iot[i].trim().replace(/\"/g, ''));
 			//replace leading non-digit t
-			//alert(targetId);
+      //alert(targetId);
+      console.log("targetId = ", targetId);
+      console.log("i = ", i);
 			for (var m = 0; m <obj1.length; m++){
 
 				var fromTxt = JSON.stringify(Object.keys(obj1[m])[0]).trim().replace(/\"/g, '').replace(/' '/g, '');
-				if(all_iot[i].trim().replace(/' '/g, '') == fromTxt) {
+				if(targetId == fromTxt) {
 					var output =JSON.stringify(Object.values(obj1[m])[0]).trim().replace(/\"/g, '');
 					$('capa').innerHTML = output.replace(/-/g, ',');
 				//	$('attri').innerHTML = a2;
 				}
-
-	}
-
-			
-		}); 
+      }
+    }); 
 
 });
 
