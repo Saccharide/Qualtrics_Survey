@@ -121,12 +121,6 @@ Qualtrics.SurveyEngine.addOnload(function()
 	var wholeArray = [];
 	var j = 1;
 	var obj1 = JSON.parse(txt1);
-	for(var l = 0; l < all_iot.length; l++) {
-		for (var m = 0; m <obj1.length; m++){
-			
-			var fromTxt = JSON.stringify(Object.keys(obj1[m])[0]).trim().replace(/\"/g, '');
-		}
-	}
 
   var dict = {};
 	console.log("Number of devices", all_iot.length);
@@ -150,7 +144,9 @@ Qualtrics.SurveyEngine.addOnload(function()
 
 	for(var index = 0; index < all_iot.length; index++) {
 
-    var td = QBuilder('td',{class:'LabelContainer LabelContatiner', style:"padding-right:5px; padding-bottom:5px;", id:all_iot[index]});
+    var capability = dict[all_iot[index]];
+    console.log(capability);
+    var td = QBuilder('td',{class:'LabelContainer LabelContatiner', style:"padding-right:5px; padding-bottom:5px;", id:capability, onclick:"document.getElementById('capa').innerHTML = this.id"});
     var span = QBuilder('span',{class:'LabelWrapper'});
     var label = QBuilder('label',{class:'SingleAnswer', style:"width:120px; height:100px;"});
     var device_name = QBuilder('span',{ id:'t'+(index+1)},all_iot[index]);
@@ -171,28 +167,6 @@ Qualtrics.SurveyEngine.addOnload(function()
     tr_array.push(rest_tr);	
     var tbody = QBuilder('tbody',{},tr_array);	
     table.appendChild(tbody);
-
-
-	// Create onClickListener for devices
-		$(document).on("click", "td", function(e) {
-			var targetId = e.target.id;
-			//replace leading non-digit t
-			var i = parseInt(targetId.replace( /^\D+/g, ''));
-			//alert(all_iot[i].trim().replace(/\"/g, ''));
-			//replace leading non-digit t
-      //alert(targetId);
-      console.log("targetId = ", targetId);
-      console.log("i = ", i);
-			for (var m = 0; m <obj1.length; m++){
-
-				var fromTxt = JSON.stringify(Object.keys(obj1[m])[0]).trim().replace(/\"/g, '').replace(/' '/g, '');
-				if(targetId == fromTxt) {
-					var output =JSON.stringify(Object.values(obj1[m])[0]).trim().replace(/\"/g, '');
-					$('capa').innerHTML = output.replace(/-/g, ',');
-				//	$('attri').innerHTML = a2;
-				}
-      }
-    }); 
 
 });
 
