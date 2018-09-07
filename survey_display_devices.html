@@ -1,0 +1,188 @@
+<style>
+table.blueTable {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width:1024px;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.blueTable td, table.blueTable th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+font-size: 12px;
+}
+span.introTitle {
+  font-size:10px;
+  font-weight:bold;
+}
+table.blueTable tbody td {
+  font-size: 15 px;
+}
+
+table.blueTable thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.blueTable thead th {
+  font-size: 8px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.blueTable thead th:first-child {
+  border-left: none;
+}
+
+
+</style>
+<div>
+<table id="chessboard" class="blueTable">
+</table>
+<br>
+<div style="height:100px">
+<span style="font-size:16px"> <b>States and Commands: </b> </span>
+</br>
+<span id="capa" style="width:600px; font-size:12px;"> </span>
+</div>
+</div>
+
+
+
+
+<style>
+    table.blueTable {
+      border: 1px solid #1C6EA4;
+      background-color: #EEEEEE;
+      width:1024px;
+      text-align: left;
+      border-collapse: collapse;
+    }
+    table.blueTable td, table.blueTable th {
+      border: 1px solid #AAAAAA;
+      padding: 3px 2px;
+    font-size: 12px;
+    }
+    span.introTitle {
+      font-size:10px;
+      font-weight:bold;
+    }
+    table.blueTable tbody td {
+      font-size: 15 px;
+    }
+    
+    table.blueTable thead {
+      background: #1C6EA4;
+      background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+      background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+      background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+      border-bottom: 2px solid #444444;
+    }
+    table.blueTable thead th {
+      font-size: 8px;
+      font-weight: bold;
+      color: #FFFFFF;
+      border-left: 2px solid #D0E4F5;
+    }
+    table.blueTable thead th:first-child {
+      border-left: none;
+    }
+    
+    
+    </style>
+    <div>
+    <table id="chessboard" class="blueTable">
+    <span class="LabelWrapper"> 
+    </table>
+    <br>
+    <div style="height:100px">
+    <span style="font-size:16px"> <b>States and Commands: </b> </span>
+    </br>
+    <span id="capa" style="width:600px; font-size:12px;"> </span>
+    </div>
+    </div>
+
+
+
+
+
+<script type="text/javaScript">
+Qualtrics.SurveyEngine.addOnload(function()
+{
+	/*Place your JavaScript here to run when the page loads*/
+	var answer = "${q://QID8/ChoiceGroup/SelectedChoices}";
+	var txt1 = '[{"Switches":[{"switch":"off-on"},{"level":"setLevel"},{"energy":""}]},{"LED strip":[{"indicatorStatus":"indicatorNever-indicatorWhenOff-indicatorWhenOn"},{"switch":"off-on"}]},{"Light Bulb":[{"switch":"off-on"},{"level":"setLevel"},{"colorValue":"setColorValue"},{"color-hue-saturation":"setColor-setHue-setSaturation"},{"colorValue":"setColorValue"},{"colorMode":""}]},{"Lock":[{"lock":"lock-unlock"},{"":"configure"}]},{"Alarm":[{"alarm":"both-off-siren-strobe"}]},{"Camera":[{"switch":"off-on"},{"image":"take"}]},{"Doorbell":[{"door":"close-open"},{"alarm":"both-off-siren-strobe"}]},{"Garage Door":[{"door":"close-open"},{"door":"close-open"},{"threeAxis":""},{"contact":""},{"lqi-rssi":""},{"temperature":""}]},{"Sprinkler":[{"switch":"off-on"},{"":"push"}]},{"Button":[{"button-numberOfButtons":""}]},{"Robot Vacuum":[{"switch":"off-on"},{"robotCleanerCleaningMode":"setRobotCleanerCleaningMode"},{"robotCleanerMovement":"setRobotCleanerMovement"},{"robotCleanerTurboMode":"setRobotCleanerTurboMode"}]},{"Thermostat":[{"temperature":""},{"coolingSetpoint-coolingSetpointRange-heatingSetpoint-heatingSetpointRange-schedule-supportedThermostatFanModes-supportedThermostatModes-temperature-thermostatFanMode-thermostatMode-thermostatOperatingState-thermostatSetpoint-thermostatSetpointRange":"auto-cool-emergencyHeat-fanAuto-fanCirculate-fanOn-heat-off-setCoolingSetpoint-setHeatingSetpoint-setSchedule-setThermostatFanMode-setThermostatMode"},{"coolingSetpoint":"setCoolingSetpoint"},{"thermostatSetpoint":""},{"supportedThermostatFanModes-thermostatFanMode":"fanAuto-fanCirculate-fanOn-setThermostatFanMode"},{"heatingSetpoint":"setHeatingSetpoint"},{"supportedThermostatModes-thermostatMode":"auto-cool-emergencyHeat-heat-off-setThermostatMode"},{"thermostatOperatingState":""},{"humidity":""}]},{"Water Heater":[{"switch":"off-on"},{"water":""}]},{"Air Conditioner":[{"airConditionerMode":"setAirConditionerMode"},{"switch":"off-on"},{"temperature":""},{"level":"setLevel"},{"rapidCooling":"setRapidCooling"}]},{"TV":[{"switch":"off-on"},{"tvChannel":"channelDown-channelUp-setTvChannel"},{"inputSource-supportedInputSources":"setInputSource"},{"activities-currentActivity":"startActivity"}]},{"Dryer":[{"completionTime-dryerJobState-machineState-supportedMachineStates":"setMachineState"},{"dryerMode":"setDryerMode"}]},{"Humidity Sensor":[{"humidity":""},{"temperature":""}]},{"Moisture Sensor":[{"water":""},{"temperature":""}]},{"Motion":[{"motion":""}]},{"CO detector":[{"carbonMonoxide":""},{"alarm":"both-off-siren-strobe"},{"tamper":""},{"battery":""}]},{"Tilt Sensor":[{"threeAxis":""},{"motion":""},{"acceleration":""},{"lqi-rssi":""}]},{"Open/Close Sensor":[{"contact":""}]},{"Smoke Detector":[{"smoke":""},{"temperature":""},{"tamper":""},{"battery":""}]},{"Presence Sensor":[{"presence":""},{"":"beep"},{"lqi-rssi":""}]},{"Temperature Sensor":[{"temperature":""},{"humidity":""}]},{"Speaker":[{"switch":"off-on"},{"mute":"mute-setMute-unmute"},{"":"playTrack-playTrackAndRestore-playTrackAndResume"},{"audioTrackData":""},{"volume":"setVolume-volumeDown-volumeUp"},{"level-mute-status-trackData-trackDescription":"mute-nextTrack-pause-play-playTrack-previousTrack-restoreTrack-resumeTrack-setLevel-setTrack-stop-unmute"}]},{"Energy Meter":[{"energy":""},{"power":""},{"":""},{"":"configure"},{"powerSource":""}]},{"Coffee Maker":[{"switch":"off-on"},{"temperature":""}]},{"Shades and Blinds":[{"windowShade":"close-open-presetPosition"}]},{"Valve":[{"valve":"close-open"}]},{"Vent":[{"thermostatOperatingState":""},{"temperature":""}]},{"Beacon Device":[{"presence":""}]},{"Air Purifier":[{"airQuality":""},{"switch":"off-on"}]},{"Water Leak Detector":[{"water":""},{"alarm":"both-off-siren-strobe"}]},{"Induction CookTop":[{"switch":"off-on"},{"temperature":""}]},{"Dishwasher":[{"dishwasherMode":"setDishwasherMode"},{"completionTime-dishwasherJobState-machineState-supportedMachineStates":"setMachineState"}]},{"Refrigerator":[{"refrigerationSetpoint":"setRefrigerationSetpoint"},{"switch":"off-on"}]},{"Microwave Oven":[{"completionTime-machineState-operationTime-ovenJobState-progress-supportedMachineStates":"setMachineState-stop"},{"switch":"off-on"},{"ovenMode":"setOvenMode"}]},{"Smoke Detector":[{"smoke":""},{"battery":""}]},{"Glass Break Detector":[{"shock":""}]},{"Fan":[{"fanSpeed":"setFanSpeed"},{"switch":"off-on"}]},{"Pulse Monitor":[{"":""}]},{"Sleep Monitor":[{"sleeping":""}]},{"Smart Battery":[{"battery":""},{"powerSource":""}]},{"Smart Printer":[{"switch":"off-on"}]},{"Weather Station":[{"coolingSetpoint-coolingSetpointRange-heatingSetpoint-heatingSetpointRange-schedule-supportedThermostatFanModes-supportedThermostatModes-temperature-thermostatFanMode-thermostatMode-thermostatOperatingState-thermostatSetpoint-thermostatSetpointRange":"auto-cool-emergencyHeat-fanAuto-fanCirculate-fanOn-heat-off-setCoolingSetpoint-setHeatingSetpoint-setSchedule-setThermostatFanMode-setThermostatMode"},{"illuminance":""},{"temperature":""},{"humidity":""},{"ultravioletIndex":""},{"":""}]},{"Water purifier":[{"water":""}]},{"Gas Sensor":[{"odorLevel":""},{"alarm":"both-off-siren-strobe"}]},{"Smart Mirror":[{"image":"take"},{"videoClip":"captureClip"}]},{"Dust Detector":[{"dustLevel-fineDustLevel":""}]},{"Blood Pressure Monitor":[{"":""}]},{"Blood Oximeter":[{"":""}]},{"Oil Heater":[{"switch":"off-on"},{"completionTime-sessionStatus":"cancel-pause-setCompletionTime-start-stop"}]},{"Electric Blanket":[{"switch":"off-on"},{"temperature":""}]},{"Dehumidifier":[{"humidity":""},{"temperature":""},{"switch":"off-on"}]},{"Humidifier":[{"humidity":""},{"temperature":""},{"switch":"off-on"}]},{"Kettle":[{"switch":"off-on"},{"temperature":""},{"completionTime-sessionStatus":"cancel-pause-setCompletionTime-start-stop"}]},{"Rice Cooker":[{"switch":"off-on"},{"temperature":""},{"completionTime-sessionStatus":"cancel-pause-setCompletionTime-start-stop"}]},{"SoyMilk Maker":[{"switch":"off-on"},{"completionTime-sessionStatus":"cancel-pause-setCompletionTime-start-stop"}]},{"Bread Maker":[{"switch":"off-on"},{"temperature":""},{"completionTime-sessionStatus":"cancel-pause-setCompletionTime-start-stop"}]},{"Gas Stove":[{"switch":"off-on"},{"completionTime-sessionStatus":"cancel-pause-setCompletionTime-start-stop"}]},{"Air Cooler":[{"switch":"off-on"},{"fanSpeed":"setFanSpeed"}]},{"Milk Dispenser":[{"switch":"off-on"},{"completionTime-sessionStatus":"cancel-pause-setCompletionTime-start-stop"}]},{"Smart IR":[{"infraredLevel":"setInfraredLevel"}]},{"Sous Vide":[{"switch":"off-on"},{"temperature":""}]},{"Curtains":[{"switch":"off-on"}]},{"Plant Grower":[{"switch":"off-on"}]},{"Airer":[{"switch":"off-on"}]},{"Scene Switch":[{"switch":"off-on"},{"button-numberOfButtons":""},{"color-hue-saturation":"setColor-setHue-setSaturation"},{"colorValue":"setColorValue"},{"colorMode":""},{"colorTemperature":"setColorTemperature"}]},{"Lighting Remote":[{"switch":"off-on"},{"button-numberOfButtons":""},{"color-hue-saturation":"setColor-setHue-setSaturation"},{"colorValue":"setColorValue"},{"colorMode":""},{"colorTemperature":"setColorTemperature"}]},{"Car Automation":[{"presence":""},{"switch":"off-on"}]},{"Door Sensor":[{"door":"close-open"},{"contact":""},{"lqi-rssi":""}]},{"Illuminance Sensor":[{"energy":""},{"level":"setLevel"},{"switch":"off-on"},{"":"configure"},{"":""},{"":""}]},{"Step Sensor":[{"goal-steps":""}]},{"Filter":[{"filterStatus":""}]},{"AudioPlayer":[{"mute":"mute-setMute-unmute"},{"volume":"setVolume-volumeDown-volumeUp"}]},{"GeoLocation":[{"accuracy-altitudeAccuracy-heading-lastUpdateTime-latitude-longitude-method-speed":""}]},{"PH Sensor":[{"pH":""}]},{"Smart Assistant":[{"switch":"off-on"},{"mute":"mute-setMute-unmute"},{"":"playTrack-playTrackAndRestore-playTrackAndResume"},{"audioTrackData":""},{"volume":"setVolume-volumeDown-volumeUp"},{"level-mute-status-trackData-trackDescription":"mute-nextTrack-pause-play-playTrack-previousTrack-restoreTrack-resumeTrack-setLevel-setTrack-stop-unmute"}]}]';
+	var container = this.questionContainer;
+	var all_iot = answer.split(",");
+		//The array of Qbuilder "TR" objects
+	var wholeArray = [];
+	var j = 1;
+	var obj1 = JSON.parse(txt1);
+	for(var l = 0; l < all_iot.length; l++) {
+		for (var m = 0; m <obj1.length; m++){
+			
+			var fromTxt = JSON.stringify(Object.keys(obj1[m])[0]).trim().replace(/\"/g, '');
+			if(all_iot[l].trim() == fromTxt) {
+				//alert(all_iot[l].trim()  + '--' + fromTxt );
+			}
+		}
+	}
+
+		var table = document.getElementById("chessboard");   
+	var td_array=[];
+	for(var i = 0; i < all_iot.length; i++) {
+
+		var id1 = 't' + i;
+		
+		var td1 = QBuilder('td',{id:id1}, j  +'. ' + all_iot[i]);
+		j++;
+		td_array.push(td1);
+
+	}
+    var tr = QBuilder('tr',{},td_array);		
+    table.appendChild(tr);
+    wholeArray.push(tr);
+
+
+
+
+	
+//	$(container).appendChild(table);
+	
+		$(document).on("click", "td", function(e) {
+			var targetId = e.target.id;
+			//replace leading non-digit t
+			var i = parseInt(targetId.replace( /^\D+/g, ''));
+			//alert(all_iot[i].trim().replace(/\"/g, ''));
+			//replace leading non-digit t
+			//alert(targetId);
+			for (var m = 0; m <obj1.length; m++){
+
+				var fromTxt = JSON.stringify(Object.keys(obj1[m])[0]).trim().replace(/\"/g, '').replace(/' '/g, '');
+				if(all_iot[i].trim().replace(/' '/g, '') == fromTxt) {
+					var output =JSON.stringify(Object.values(obj1[m])[0]).trim().replace(/\"/g, '');
+					$('capa').innerHTML = output.replace(/-/g, ',');
+				//	$('attri').innerHTML = a2;
+				}
+
+	}
+
+			
+		}); 
+
+});
+
+Qualtrics.SurveyEngine.addOnReady(function()
+{
+	/*Place your JavaScript here to run when the page is fully displayed*/
+
+});
+
+Qualtrics.SurveyEngine.addOnUnload(function()
+{
+	/*Place your JavaScript here to run when the page is unloaded*/
+
+});
+</script>
