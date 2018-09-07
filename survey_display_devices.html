@@ -130,13 +130,13 @@ Qualtrics.SurveyEngine.addOnload(function()
 		}
 	}
 
-		var table = document.getElementById("chessboard");   
+	var table = document.getElementById("chessboard");   
 	var td_array=[];
 	for(var i = 0; i < all_iot.length; i++) {
 
 		var id1 = 't' + i;
 		
-		var td1 = QBuilder('td',{id:id1}, j  +'. ' + all_iot[i]);
+		var td1 = QBuilder('label',{id:id1}, j  +'. ' + all_iot[i]);
 		j++;
 		td_array.push(td1);
 
