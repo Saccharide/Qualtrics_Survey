@@ -39,7 +39,8 @@ table.blueTable thead th:first-child {
 
 </style>
 <div>
-<table id="chessboard" class="blueTable">
+<table role="presentation" class="ChoiceStructure" id="table_container" cellpadding="0" cellspacing="0" border="0"> 
+
 </table>
 <br>
 <div style="height:100px">
@@ -94,7 +95,7 @@ table.blueTable thead th:first-child {
     </style>
     <div>
     <table id="chessboard" class="blueTable">
-    <span class="LabelWrapper"> 
+    <span class="LabelWrapper" id="label_container"> 
     </table>
     <br>
     <div style="height:100px">
@@ -130,20 +131,35 @@ Qualtrics.SurveyEngine.addOnload(function()
 		}
 	}
 
-	var table = document.getElementById("chessboard");   
-	var td_array=[];
+	var table = document.getElementById("table_container");   
+  var td_array=[];
+  var tr_array=[];
+  var tr = QBuilder('tr',{},td_array);
 	for(var i = 0; i < all_iot.length; i++) {
 
-		var id1 = 't' + i;
-		
-		var td1 = QBuilder('label',{class:"SingleAnswer"},{id:id1}, j  +'. ' + all_iot[i]);
-		j++;
-		td_array.push(td1);
 
+    var td = QBuilder('td',{class:'LabelContainer LabelContatiner', style:"padding-right:5px"});
+    var span = QBuilder('span',{class:'LabelWrapper'});
+    var label = QBuilder('label',{class:'SingleAnswer'});
+    var device_name = QBuilder('span',all_iot[i]);
+
+    label.appendChild(device_name);
+    span.appendChild(label);
+    td.appendChild(span);
+
+    if(i%7 == 0){
+      tr = QBuilder('tr',{},td_array);
+      td_array=[];
+      tr_array.push(tr);
+    }
+    else{
+      td_array.push(td);
+    }
 	}
-    var tr = QBuilder('tr',{},td_array);		
+    tr2 = QBuilder('tr',{},td_array);		
     table.appendChild(tr);
-    wholeArray.push(tr);
+    table.appendChild(tr2);
+
 
 
 
@@ -186,3 +202,24 @@ Qualtrics.SurveyEngine.addOnUnload(function()
 
 });
 </script>
+
+
+
+
+<table role="presentation" class="ChoiceStructure" cellpadding="0" cellspacing="0" border="0"> 
+  <tbody> 
+   <tr> 
+    <!-- LabelContainer needs to have both for now because there's a misspelling in the CSS --> 
+    <td width="20%" class="LabelContainer LabelContatiner "> <span class="LabelWrapper"> <label for="QR~QID6~1" id="QID6-1-label" class="SingleAnswer" data-runtime-class-q-checked="runtime.Choices.1.Selected" style="padding-top: 20px; padding-bottom: 20px;"><span>Click to write Choice 1</span></label></span> <label for="QR~QID6~1" class="q-radio" aria-hidden="true" data-runtime-class-q-checked="runtime.Choices.1.Selected"></label> 
+     <div class="ControlContainer " style="margin: 0 auto"> 
+      <input choiceid="1" class="radio QR-QID6-1 QWatchTimer" type="radio" name="QR~QID6" id="QR~QID6~1" value="1" data-runtime-checked="runtime.Selected" aria-labelledby="QID6-1-label" /> 
+     </div> </td> 
+    <!-- LabelContainer needs to have both for now because there's a misspelling in the CSS --> 
+    <td width="20%" class="LabelContainer LabelContatiner alt"> <span class="LabelWrapper"> <label for="QR~QID6~2" id="QID6-2-label" class="SingleAnswer" data-runtime-class-q-checked="runtime.Choices.2.Selected" style="padding-top: 20px; padding-bottom: 20px;"><span>Click to write Choice 2</span></label></span> <label for="QR~QID6~2" class="q-radio" aria-hidden="true" data-runtime-class-q-checked="runtime.Choices.2.Selected"></label> 
+     <div class="ControlContainer alt" style="margin: 0 auto"> 
+      <input choiceid="2" class="radio QR-QID6-2 QWatchTimer" type="radio" name="QR~QID6" id="QR~QID6~2" value="2" data-runtime-checked="runtime.Selected" aria-labelledby="QID6-2-label" /> 
+     </div> </td> 
+
+   </tr> 
+  </tbody>
+ </table>
