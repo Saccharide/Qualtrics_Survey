@@ -1,114 +1,3 @@
-<style>
-table.blueTable {
-  border: 1px solid #1C6EA4;
-  background-color: #EEEEEE;
-  width:1024px;
-  text-align: left;
-  border-collapse: collapse;
-}
-table.blueTable td, table.blueTable th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
-font-size: 12px;
-}
-span.introTitle {
-  font-size:10px;
-  font-weight:bold;
-}
-table.blueTable tbody td {
-  font-size: 15 px;
-}
-
-table.blueTable thead {
-  background: #1C6EA4;
-  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  border-bottom: 2px solid #444444;
-}
-table.blueTable thead th {
-  font-size: 8px;
-  font-weight: bold;
-  color: #FFFFFF;
-  border-left: 2px solid #D0E4F5;
-}
-table.blueTable thead th:first-child {
-  border-left: none;
-}
-
-
-</style>
-<div>
-<table role="presentation" class="ChoiceStructure" id="table_container" cellpadding="0" cellspacing="0" border="0"> 
-
-</table>
-<br>
-<div style="height:100px">
-<span style="font-size:16px"> <b>States and Commands: </b> </span>
-</br>
-<span id="capa" style="width:600px; font-size:12px;"> </span>
-</div>
-</div>
-
-
-
-
-<style>
-    table.blueTable {
-      border: 1px solid #1C6EA4;
-      background-color: #EEEEEE;
-      width:1024px;
-      text-align: left;
-      border-collapse: collapse;
-    }
-    table.blueTable td, table.blueTable th {
-      border: 1px solid #AAAAAA;
-      padding: 3px 2px;
-    font-size: 12px;
-    }
-    span.introTitle {
-      font-size:10px;
-      font-weight:bold;
-    }
-    table.blueTable tbody td {
-      font-size: 15 px;
-    }
-    
-    table.blueTable thead {
-      background: #1C6EA4;
-      background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-      background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-      background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-      border-bottom: 2px solid #444444;
-    }
-    table.blueTable thead th {
-      font-size: 8px;
-      font-weight: bold;
-      color: #FFFFFF;
-      border-left: 2px solid #D0E4F5;
-    }
-    table.blueTable thead th:first-child {
-      border-left: none;
-    }
-    
-    
-    </style>
-    <div>
-    <table id="chessboard" class="blueTable">
-    <span class="LabelWrapper" id="label_container"> 
-    </table>
-    <br>
-    <div style="height:100px">
-    <span style="font-size:16px"> <b>States and Commands: </b> </span>
-    </br>
-    <span id="capa" style="width:600px; font-size:12px;"> </span>
-    </div>
-    </div>
-
-
-
-
-
 <script type="text/javaScript">
 Qualtrics.SurveyEngine.addOnload(function()
 {
@@ -145,7 +34,7 @@ Qualtrics.SurveyEngine.addOnload(function()
 	for(var index = 0; index < all_iot.length; index++) {
 
     var capability = dict[all_iot[index]];
-    console.log(capability);
+    // Cheating a little bit by putting the capability as the id in order for dynamically exectue the onclick function
     var td = QBuilder('td',{class:'LabelContainer LabelContatiner', style:"padding-right:5px; padding-bottom:5px;", id:capability, onclick:"document.getElementById('capa').innerHTML = this.id"});
     var span = QBuilder('span',{class:'LabelWrapper'});
     var label = QBuilder('label',{class:'SingleAnswer', style:"width:120px; height:100px;"});
@@ -182,24 +71,3 @@ Qualtrics.SurveyEngine.addOnUnload(function()
 
 });
 </script>
-
-
-
-
-<table role="presentation" class="ChoiceStructure" cellpadding="0" cellspacing="0" border="0"> 
-  <tbody> 
-   <tr> 
-    <!-- LabelContainer needs to have both for now because there's a misspelling in the CSS --> 
-    <td width="20%" class="LabelContainer LabelContatiner "> <span class="LabelWrapper"> <label for="QR~QID6~1" id="QID6-1-label" class="SingleAnswer" data-runtime-class-q-checked="runtime.Choices.1.Selected" style="padding-top: 20px; padding-bottom: 20px;"><span>Click to write Choice 1</span></label></span> <label for="QR~QID6~1" class="q-radio" aria-hidden="true" data-runtime-class-q-checked="runtime.Choices.1.Selected"></label> 
-     <div class="ControlContainer " style="margin: 0 auto"> 
-      <input choiceid="1" class="radio QR-QID6-1 QWatchTimer" type="radio" name="QR~QID6" id="QR~QID6~1" value="1" data-runtime-checked="runtime.Selected" aria-labelledby="QID6-1-label" /> 
-     </div> </td> 
-    <!-- LabelContainer needs to have both for now because there's a misspelling in the CSS --> 
-    <td width="20%" class="LabelContainer LabelContatiner alt"> <span class="LabelWrapper"> <label for="QR~QID6~2" id="QID6-2-label" class="SingleAnswer" data-runtime-class-q-checked="runtime.Choices.2.Selected" style="padding-top: 20px; padding-bottom: 20px;"><span>Click to write Choice 2</span></label></span> <label for="QR~QID6~2" class="q-radio" aria-hidden="true" data-runtime-class-q-checked="runtime.Choices.2.Selected"></label> 
-     <div class="ControlContainer alt" style="margin: 0 auto"> 
-      <input choiceid="2" class="radio QR-QID6-2 QWatchTimer" type="radio" name="QR~QID6" id="QR~QID6~2" value="2" data-runtime-checked="runtime.Selected" aria-labelledby="QID6-2-label" /> 
-     </div> </td> 
-
-   </tr> 
-  </tbody>
- </table>
