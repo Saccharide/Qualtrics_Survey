@@ -134,22 +134,20 @@ Qualtrics.SurveyEngine.addOnload(function()
 	for(var index = 0; index < all_iot.length; index++) {
 
     var td = QBuilder('td',{class:'LabelContainer LabelContatiner', style:"padding-right:5px; padding-bottom:5px;"});
-    var span = QBuilder('span',{class:'LabelWrapper', id:'t'+index});
+    var span = QBuilder('span',{class:'LabelWrapper', id:'t'+(index+1)});
     var label = QBuilder('label',{class:'SingleAnswer', style:"width:120px; height:100px;"});
     var device_name = QBuilder('span',all_iot[index]);
 
     label.appendChild(device_name);
     span.appendChild(label);
     td.appendChild(span);
-
     td_array.push(td);
-    if(index%7 == 0){
+
+    // Adding another row once it reached to 7 devices
+    if((index+1)%7 == 0){
       var new_tr = QBuilder('tr',{},td_array);
       td_array=[];
       tr_array.push(new_tr);
-      console.log("Should never execute");
-      console.log(index);
-      console.log(index%7);
     }
 	}
     var rest_tr = QBuilder('tr',{},td_array);
@@ -158,9 +156,6 @@ Qualtrics.SurveyEngine.addOnload(function()
     table.appendChild(tbody);
 
 
-
-	
-//	$(container).appendChild(table);
 	
 		$(document).on("click", "span", function(e) {
 			var targetId = e.target.id;
