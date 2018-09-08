@@ -57,6 +57,15 @@ Qualtrics.SurveyEngine.addOnload(function()
     var tbody = QBuilder('tbody',{},tr_array);	
     table.appendChild(tbody);
 
+  $(document).on("click", "td", function(e) {
+    
+    label_array = document.getElementsByTagName('label');
+    for (var index = 0; index < label_array.length; index++){
+      label_array[index].classList.remove("q-checked");
+    }
+    var td = e.target.parentElement.parentElement;
+    td.getElementsByTagName('label')[0].classList.add("q-checked");
+  });
 });
 
 Qualtrics.SurveyEngine.addOnReady(function()
