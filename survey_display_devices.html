@@ -37,7 +37,7 @@ Qualtrics.SurveyEngine.addOnload(function()
     // Cheating a little bit by putting the capability as the id in order for dynamically exectue the onclick function
     var td = QBuilder('td',{class:'LabelContainer LabelContatiner', style:"padding-right:5px; padding-bottom:5px;", id:capability, onclick:"document.getElementById('capa').innerHTML = this.id"});
     var span = QBuilder('span',{class:'LabelWrapper'});
-    var label = QBuilder('label',{class:'SingleAnswer', style:"width:120px; height:100px;"});
+    var label = QBuilder('label',{class:'SingleAnswer', style:"width:120px; height:100px;",,align:"center"});
     var device_name = QBuilder('span',{ id:'t'+(index+1)},all_iot[index]);
 
     label.appendChild(device_name);
